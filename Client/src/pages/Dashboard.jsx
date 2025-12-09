@@ -20,6 +20,7 @@ const Dashboard = () => {
   const [isCreateUserModalOpen, setIsCreateUserModalOpen] = useState(false);
   const [newUser, setNewUser] = useState({ name: '', username: '', password: '', role: 'Client' });
   const [showPassword, setShowPassword] = useState(false);
+  const [passwordFocus, setPasswordFocus] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [confirmingProject, setConfirmingProject] = useState(null); // stores project ID when user clicks to request
     

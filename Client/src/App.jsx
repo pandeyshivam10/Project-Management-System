@@ -26,7 +26,7 @@ const App = () => {
           <Route index element={<Navigate to="/projects" replace />} />
           <Route path="projects" element={<Dashboard />} />
           <Route path="create-project" element={<CreateProject />} />
-          <Route path="*" element={<div className="p-10">Page under construction</div>} />
+          <Route path="*" element={<div className="p-10"></div>} />
         </Route>
       </Routes>
     </BrowserRouter>

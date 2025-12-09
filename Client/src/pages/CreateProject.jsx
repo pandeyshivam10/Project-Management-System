@@ -112,7 +112,6 @@ const CreateProject = () => {
                   required
                   className="w-full bg-[#363636] border-none rounded-lg p-3 text-white focus:ring-1 focus:ring-purple-500 pr-10"
                 />
-                <Calendar size={18} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
              </div>
              <div className="relative">
                 <input
@@ -123,7 +122,6 @@ const CreateProject = () => {
                   required
                   className="w-full bg-[#363636] border-none rounded-lg p-3 text-white focus:ring-1 focus:ring-purple-500 pr-10"
                 />
-                 <Calendar size={18} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
              </div>
            </div>
         </div>
