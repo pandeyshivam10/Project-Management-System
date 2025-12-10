@@ -12,7 +12,7 @@ module.exports = (req, res, next) => {
       return res.status(401).json({ message: 'Authentication failed: Malformed token' });
     }
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'secret_key_change_me');
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
     req.userData = decoded; 
     next();
   } catch (error) {

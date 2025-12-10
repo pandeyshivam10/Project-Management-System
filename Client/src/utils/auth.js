@@ -1,7 +1,3 @@
-/**
- * Decodes the JWT token from localStorage to retrieve user information.
- * This avoids relying on potentially tampered localStorage 'role' or 'username' keys.
- */
 export const getAuthData = () => {
     const token = localStorage.getItem('token');
     if (!token) return { role: null, username: null, userId: null };

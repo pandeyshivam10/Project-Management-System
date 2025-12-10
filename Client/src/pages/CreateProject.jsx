@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import axios from '../api';
+import api from '../api';
 import { ArrowLeft, Calendar } from 'lucide-react';
 import toast, { Toaster } from 'react-hot-toast';
 
@@ -34,7 +34,7 @@ const CreateProject = () => {
     }
 
     try {
-      await axios.post('/createProject', formData);
+      await api.post('/createProject', formData);
       toast.success('Project created successfully');
       setTimeout(() => navigate('/projects'), 1500);
     } catch (error) {

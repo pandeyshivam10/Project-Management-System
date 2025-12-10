@@ -1,14 +1,14 @@
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { LayoutDashboard, Activity, Layers, ListTodo, History, Power } from 'lucide-react';
-import axios from '../api';
+import api from '../api';
 
 const Sidebar = ({ isOpen, onClose }) => {
   const navigate = useNavigate();
 
   const handleLogout = async () => {
     try {
-      await axios.post('/logout');
+      await api.post('/logout');
     } catch (e) {
       console.error(e);
     }

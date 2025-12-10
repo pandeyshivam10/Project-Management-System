@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import axios from '../api';
+import api from '../api';
 import { Eye, EyeOff, ArrowLeft, ChevronDown } from 'lucide-react';
 
 const Signup = () => {
@@ -29,7 +29,7 @@ const Signup = () => {
       return;
     }
     try {
-      await axios.post('/signup', formData);
+      await api.post('/signup', formData);
       navigate('/login');
     } catch (err) {
       setError(err.response?.data?.message || 'Signup failed');

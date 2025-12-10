@@ -17,7 +17,7 @@ const requestAccess = async (req, res) => {
     // Check if request already exists
     const existing = await AccessRequest.findOne({ client: req.userData.userId, project: projectId });
     if (existing) {
-      if (existing.status === 'Pending') return res.status(400).json({ message: 'Request already pending' });
+      if (existing.status === 'Pending') return res.status(400).json({ messge: 'Request already pending' });
       if (existing.status === 'Approved') return res.status(400).json({ message: 'Already have access' });
       return res.status(400).json({ message: 'Request previously denied' });
     }
@@ -34,7 +34,7 @@ const requestAccess = async (req, res) => {
   }
 };
 
-/**
+/*
  * Use Case: Admin approves or denies a request
  * Validations:
  * - Restricted to 'Admin' role.

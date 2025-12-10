@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from '../api';
+import api from '../api';
 import { useNavigate } from 'react-router-dom';
 import { Plus, X, Eye, EyeOff, ChevronDown } from 'lucide-react';
 import toast, { Toaster } from 'react-hot-toast';
@@ -40,7 +40,7 @@ const Dashboard = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('/projects');
+      const response = await api.get('/projects');
       setData(response.data);
     } catch (error) {
       console.error(error);
@@ -56,7 +56,7 @@ const Dashboard = () => {
   const handleRequestAccess = async (projectId) => {
     if (!projectId) return;
     try {
-      await axios.post('/requestAccess', { projectId });
+      await api.post('/requestAccess', { projectId });
       toast.success('Access requested successfully');
       setConfirmingProject(null); 
       fetchData();
@@ -67,7 +67,7 @@ const Dashboard = () => {
 
   const handleApproveDeny = async (requestId, status) => {
     try {
-      await axios.post('/handleRequest', { requestId, status });
+      await api.post('/handleRequest', { requestId, status });
       toast.success(`Request ${status} successfully`);
       fetchData();
     } catch (error) {
@@ -83,7 +83,7 @@ const Dashboard = () => {
      }
 
      try {
-       await axios.post('/signup', newUser);
+       await api.post('/signup', newUser);
        toast.success('User created successfully');
        setIsCreateUserModalOpen(false);
        setNewUser({ name: '', username: '', password: '', role: 'Client' });

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import axios from '../api';
+import api from '../api';
 import { Eye, EyeOff, ArrowLeft } from 'lucide-react';
 
 const Login = () => {
@@ -14,7 +14,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post('/login', formData);
+      const { data } = await api.post('/login', formData);
       localStorage.setItem('token', data.token);
       navigate('/projects');
     } catch (err) {
